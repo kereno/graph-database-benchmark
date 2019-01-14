@@ -51,21 +51,21 @@ class RedisGraphQueryRunner(QueryRunner):
         else:
             return float(result[0][1][0]) if len(result[0]) == 2 else 0
 
-#attempting to support Tiger:
-#class TigerGraphQueryRunner(QueryRunner):
-#  def __init__(self, url = config.TIGERGRAPH_HTTP):
-#    QueryRunner.__init__(self)
-#    self.session = requests.Session()
-#    self.url = url
-#
-#  def KN(self, root, depth):
-#      result = self.session.get(self.url + "/query/khop", params={'start_node': root, "depth":depth}).json()
-#      return result["results"][0]["Start.size()"]
-#
-#  def PG(self, iteration):
-#      result = self.session.get(self.url + "/query/pagerank", params={'iteration': iteration, "dampingFactor":0.8}).json()
-#      print (result)
-#
-#  def WCC(self):
-#      result = self.session.get(self.url + "/query/wcc").json()
-#      print (result)
+# TigerGraph query runner (compatible with v2.1.8)
+class TigerGraphQueryRunner(QueryRunner):
+   def __init__(self, url = config.TIGERGRAPH_HTTP):
+       QueryRunner.__init__(self)
+       self.session = requests.Session()
+       self.url = url
+
+   def KN(self, root, depth):
+       result = self.session.get(self.url + "/query/khop", params={'start_node': root, "depth":depth}).json()
+       return result["results"][0]["Start.size()"]
+
+   def PG(self, iteration):
+       result = self.session.get(self.url + "/query/pagerank", params={'iteration': iteration, "dampingFactor":0.8}).json()
+       print (result)
+
+   def WCC(self):
+       result = self.session.get(self.url + "/query/wcc").json()
+       print (result)
