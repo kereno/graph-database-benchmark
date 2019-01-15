@@ -22,9 +22,11 @@ Hardware & Major enviroment
 - Amazon EC2 machine r4.8xlarge
 - OS Ubuntu 18.04.1 LTS
 - Install the required Python modules with the following commands
-$ sudo apt-get install python-pip python-dev build-essential
+$ sudo apt-add-repository universe
+$ sudo apt-get update
+$ sudo apt-get install build-essential cmake python-pip python-dev  
 $ sudo pip install --upgrade pip
-$ sudo pip install click
+$ sudo pip install redis click
 
 
 - 32 vCPUs
@@ -39,18 +41,18 @@ RedisGraph module v1.0.0
 Install Redis and RedisGraph
 ===============
 sudo apt-get install redis
-git clone git@github.com:RedisLabsModules/RedisGraph.git
-cd redis-graph
+git clone https://github.com/RedisLabsModules/RedisGraph.git
+cd RedisGraph
 git checkout v1.0.0
 make
 
 Launching Redis
 ===============
 # start server.
-/usr/local/bin/redis-server --loadmodule ./src/redisgraph.so
+redis-server --loadmodule ./src/redisgraph.so
 
 # to stop server
-/usr/local/bin/redis-cli shutdown
+redis-cli shutdown
 
 Loading data
 ==============
