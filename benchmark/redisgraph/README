@@ -46,6 +46,10 @@ cd RedisGraph
 git checkout v1.0.0
 make
 
+Copy benchmark files:
+======================
+git clone https://github.com/RedisGraph/graph-database-benchmark.git
+
 Launching Redis
 ===============
 # start server.
