@@ -26,7 +26,7 @@ $ sudo apt-add-repository universe
 $ sudo apt-get update
 $ sudo apt-get install build-essential cmake python-pip python-dev  
 $ sudo pip install --upgrade pip
-$ sudo pip install redis click
+$ sudo pip install redis click requests config
 
 
 - 32 vCPUs
@@ -39,8 +39,12 @@ Redis version 5.0.3
 RedisGraph module v1.0.0
 
 Install Redis and RedisGraph
-===============
-sudo apt-get install redis
+==============================
+git clone https://github.com/antirez/redis.git
+cd redis
+make 
+sudo apt-get install tcl
+make test
 git clone https://github.com/RedisLabsModules/RedisGraph.git
 cd RedisGraph
 git checkout v1.0.0
