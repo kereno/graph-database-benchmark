@@ -53,7 +53,7 @@ git clone https://github.com/RedisGraph/graph-database-benchmark.git
 Launching Redis
 ===============
 # start server.
-redis-server --loadmodule ./src/redisgraph.so
+~/redis/src/redis-server --loadmodule ~/RedisGraph/src/redisgraph.so &
 
 # to stop server
 redis-cli shutdown
@@ -62,6 +62,8 @@ Loading data
 ==============
 nohup ./redisgraph_load_graph500.sh path/to/redisgraph path/to/graph500/data
 nohup ./redisgraph_load_twitter.sh path/to/redisgraph path/to/twitter/data
+
+Example: ./redisgraph_load_graph500.sh ~/RedisGraph/ .
 
 Run K-hop neighborhood count benchmark
 ================
