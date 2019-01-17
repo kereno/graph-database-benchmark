@@ -26,7 +26,7 @@ $ sudo apt-add-repository universe
 $ sudo apt-get update
 $ sudo apt-get install build-essential cmake python-pip python-dev  
 $ sudo pip install --upgrade pip
-$ sudo pip install redis click
+$ sudo pip install redis click requests config
 
 
 - 32 vCPUs
