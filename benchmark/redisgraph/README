@@ -57,7 +57,7 @@ redis-cli shutdown
 Loading data
 ==============
 nohup ./redisgraph_load_graph500.sh path/to/redisgraph path/to/graph500/data
-nohup ./redisgraph_load_twitter.sh path/to/redisgraph path/to/twitter/data
+nohup ./redisgraph_load_twitter.sh path/to/redisgraph path/to/twitter/data /path/to/redisgraph_benchmark
 
 Run K-hop neighborhood count benchmark
 ================
