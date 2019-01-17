@@ -10,4 +10,4 @@ python generate_twitter_inputs.py $2 || exit 1
 python $1/demo/bulk_insert/bulk_insert.py twitter_rv -n data/twitter_rv_net_unique_node -r data/twitter_rv || exit 1
 
 # Create index on node ID property
-redis-cli GRAPH.QUERY twitter_rv "create index on :twitter_rv_net_unique_node(id)"
+~/redis/src/redis-cli GRAPH.QUERY twitter_rv "create index on :twitter_rv_net_unique_node(id)"
