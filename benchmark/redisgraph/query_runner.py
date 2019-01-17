@@ -7,8 +7,8 @@
 # Author: Mingxi Wu mingxi.wu@tigergraph.com
 ############################################################
 
-#import requests
-#import config
+import requests
+import config
 #from neo4j.v1 import GraphDatabase, basic_auth
 import redis
 
